@@ -1,0 +1,32 @@
+﻿@model Clean.Domain.Entities.Hero
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div class="content">
+
+    <div class="form">
+        <h1>BIENVENIDOS</h1>
+
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            <strong>Codigo: </strong> <input type="number" name="heroId" /><br /><br />
+            <input id="Submit" type="submit" value="Buscar" class="btn btn-primary btn-large" />
+        }
+        <br /><br />
+        @if (Model?.Id != null)
+        {
+            <div class="d-flex justify-content-center">
+                <table>
+                    <tr>
+                        <td><strong>Nombre:</strong></td>
+                        <td>@Model.Name</td>
+                    </tr>
+                </table>
+            </div>
+        }
+    </div>
+
+</div>
+</div>
