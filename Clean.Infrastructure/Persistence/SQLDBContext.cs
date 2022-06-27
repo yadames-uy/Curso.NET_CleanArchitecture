@@ -1,4 +1,4 @@
-﻿using Clean.Domain.Entities;
+﻿using Clean.Infrastructure.Persistence.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -6,7 +6,7 @@ namespace Clean.Infrastructure.Persistence
 {
     public class SQLDBContext : DbContext
     {
-        public DbSet<Hero> Hero => Set<Hero>();
+        public DbSet<HeroDto> Hero => Set<HeroDto>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
